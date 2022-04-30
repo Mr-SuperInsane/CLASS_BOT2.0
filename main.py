@@ -14,8 +14,8 @@ from message import change_bright, check_tesuto_onoff, schedule, scope, kanji, b
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('BL7KSFCMl1n82l2FTjd12SdXs1O9wS9zmzTRQDSVoKjssrgBdojh94pRRhRDo4lEeYqsAhsJXH9r4d39k5J71dLtaFlFM+B4jqxqCYWARsISf81w5SYkfg1IOChpESbWYG+LoXlo++t3ag2Pdwq6twdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('4a7d64faa1fb0e1edf7eb2f7e6c92e94')
+line_bot_api = LineBotApi('チャンネルアクセストークン')
+handler = WebhookHandler('シークレットトークン')
 
 
 @app.route("/callback", methods=['POST'])
