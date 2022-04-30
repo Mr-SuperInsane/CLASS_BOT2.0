@@ -278,6 +278,6 @@ def information():
 
 def feedback():
     message_content = TextSendMessage(
-        text='3-2BOTに関する質問や新しい機能に関する要望は開発者にご連絡ください。\n https://line.me/ti/p/XCAi0yQ5VA'
+        text='3-2BOTに関する質問や新しい機能に関する要望は開発者にご連絡ください'
     )
     return message_content
