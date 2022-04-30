@@ -45,8 +45,10 @@ def handle_message(event):
     
     now_time += 9
     if now_time > 24:
-        weekday += 1
         now_time -= 24
+        weekday += 1
+        if weekday > 6:
+            weekday = 0
 
     #入力メッセージ受け取り
     message = event.message.text
