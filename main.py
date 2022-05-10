@@ -10,7 +10,10 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, PostbackEvent
 )
 import datetime
-from message import change_bright, check_tesuto_onoff, schedule, scope, kanji, brightstage, tesuto, file, event_c, information, feedback, change_file, change_time,change_event,change_kanji,change_tesuto,change_tesuto_onoff
+from message import (
+    change_bright, check_tesuto_onoff, schedule, scope, kanji, brightstage, tesuto, 
+    file, event_c, information, feedback, change_file, change_time,change_event,
+    change_kanji,change_tesuto,change_tesuto_onoff,reset_time)
 
 app = Flask(__name__)
 
@@ -141,6 +144,13 @@ def handle_message(event):
                     message='定期テストをモードOFFにしました'
                 elif active == '1':
                     message='定期テストをモードONにしました'
+            else:
+                message = 'エラー:情報が不足しているか形式に誤りがあります'
+                
+        elif message_command == 'リセット':
+            if list_num == 2:
+                reset_time()
+                message = '時間割をリセットしました'       
             else:
                 message = 'エラー:情報が不足しているか形式に誤りがあります'
                 
