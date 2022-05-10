@@ -7,9 +7,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 # Gspread処理
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('class-bot-347215-a4b263ffe581.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('jsonファイル名', scope)
 gc = gspread.authorize(credentials)
-SPREADSHEET_KEY = '128nXuzlxRSmhm7P1g0-tQC9rl3MSdVcHLF_2vp0ehpI'
+SPREADSHEET_KEY = 'スプレッドシートID'
 worksheet = gc.open_by_key(SPREADSHEET_KEY).sheet1
 
 #時間割
@@ -252,6 +252,12 @@ def change_tesuto_onoff():
 def check_tesuto_onoff():
     return str(worksheet.cell(9,2).value)
 
+def reset_time():
+    worksheet.update_cell(2,1,'【月曜日の時間割】各時間割')
+    worksheet.update_cell(2,2,'【火曜日の時間割】各時間割')
+    worksheet.update_cell(2,3,'【水曜日の時間割】各時間割')
+    worksheet.update_cell(2,4,'【木曜日の時間割】各時間割')
+    worksheet.update_cell(2,5,'【金曜日の時間割】各時間割')
 
 '''
 画像のフォーマット
