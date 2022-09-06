@@ -1,4 +1,4 @@
-# 3-2BOT_2.0
+# CLASS BOT_2.0
 
 Procfileとrequirements.txtはHeroku用のファイルです。ローカル環境でテストする場合、下記のコマンドでライブラリはインストールしてください。
 
